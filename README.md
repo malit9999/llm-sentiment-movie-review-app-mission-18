@@ -1,89 +1,63 @@
-# Bootcamp Mission 18 - 영화 리뷰 감성 분석 웹 애플리케이션
+# Movie Review Sentiment Analysis App
 
-## 1. 개요
-영화 정보, 사용자 리뷰, 리뷰 감성 분석 결과를 제공하는 Streamlit + FastAPI 기반 웹 애플리케이션 미션입니다.
+> **Bootcamp Mission 18** | AI Backend and Web Service
 
-## 2. 목표
-프론트엔드, 백엔드, 데이터베이스, 감성 분석 모델을 연결한 AI 서비스 구조를 구현하는 것을 목표로 했습니다.
+## 미션 소개
+영화 정보와 사용자 리뷰를 관리하고, 리뷰 작성 시 감성 분석 결과를 제공하는 Streamlit + FastAPI 기반 AI 웹 애플리케이션입니다. 프론트엔드·백엔드·데이터베이스·NLP 모델을 API 중심으로 연결했습니다.
 
-## 3. 사용 기술
+## 구현 목표
+- 영화와 리뷰를 관리하는 REST API를 구현한다.
+- 리뷰 텍스트에 감성 분석 모델을 적용한다.
+- Streamlit 화면에서 백엔드 API를 호출한다.
+- 서비스 실행 흐름을 프론트엔드와 백엔드로 분리한다.
+
+## 주요 구현 내용
+- 영화 등록·조회·삭제
+- 리뷰 등록·조회·삭제
+- 리뷰 감성 분석과 평균 점수 조회
+- FastAPI 자동 문서
+- Streamlit 기반 사용자 화면
+
+## 사용 기술
 - Python
-- streamlit
-- requests
-- fastapi
-- uvicorn
+- FastAPI
+- Streamlit
 - SQLAlchemy
-- pydantic
-- transformers
-- torch
-- numpy
-- pandas
-- python-multipart
+- Transformers
+- PyTorch
+- SQLite
 
-## 4. 주요 기능
-- 영화 등록/조회/삭제
-- 리뷰 등록 및 조회
-- 리뷰 감성 분석
-- Streamlit 프론트엔드
-- FastAPI 백엔드 API
-
-## 5. 실행 방법
-```bash
+## 실행 방법
+`ash
 pip install -r requirements.txt
+# Terminal 1
 cd backend
 uvicorn main:app --reload
-cd ../frontend
+# Terminal 2
+cd frontend
 streamlit run app.py
-```
+`
 
-## 6. 주요 파일
-- `frontend/requirements.txt`
-- `frontend/app.py`
-- `backend/models.py`
-- `backend/requirements.txt`
-- `backend/sentiment.py`
-- `backend/database.py`
-- `backend/schemas.py`
-- `backend/main.py`
-- `images/영화 수정삭제.png`
-- `images/영화별 리뷰.png`
+> 데이터셋 또는 사전학습 모델이 외부에서 제공되는 경우, 실행 전에 노트북 또는 코드의 데이터 로드 설정을 확인해야 합니다.
 
-## 7. 폴더 구조
-```text
-bootcamp-mission-18
-  .gitignore
-  backend/
-    database.py
-    main.py
-    models.py
-    requirements.txt
-    schemas.py
-    sentiment.py
-  docs/
-    mission18_report.pdf
-  frontend/
-    app.py
-    requirements.txt
-  images/
-    리뷰 등록.png
-    영화 등록.png
-    영화 수정삭제.png
-    영화별 리뷰.png
-    통계 대시보드.png
-    홈화면.png
-  README.md
-  requirements.txt
-```
+## 폴더 구조
+`	ext
+frontend/  # Streamlit 사용자 화면
+backend/   # FastAPI, DB 모델, 감성 분석 로직
+images/    # 서비스 실행 화면
+docs/      # 미션 보고서
+`
 
-## 8. 학습 내용
-AI 모델을 서비스 기능에 통합하고, 프론트엔드와 백엔드가 API로 통신하는 구조를 학습했습니다.
+## 학습 내용
+- AI 모델 기능을 API 서비스에 연결하는 방법
+- 프론트엔드와 백엔드의 책임을 분리하는 방법
+- 로컬 DB와 모델 추론 자원을 관리하는 방법
 
-## 9. 트러블슈팅
-미션을 진행하며 발생한 오류와 해결 과정은 노트북 또는 보고서에 정리했습니다.
+## 트러블슈팅 및 재현 시 참고 사항
+mission18.db와 가상환경은 .gitignore로 제외하며, 모델 다운로드 시간은 최초 실행 환경에 따라 달라질 수 있습니다.
 
-## 10. 결과 화면
-결과 이미지는 노트북 출력, 보고서 또는 `images/` 폴더에서 확인할 수 있습니다.
+## 결과 확인
+서비스 화면은 images 폴더와 docs/mission18_report.pdf에서 확인할 수 있습니다.
 
-## 11. 공개 전 확인 사항
-- frontend/.venv, backend/.venv, mission18.db는 공개 저장소 대상에서 제외했습니다.
-- DB 파일은 실행 시 로컬에서 생성되는 방식으로 관리하는 것을 권장합니다.
+## 포트폴리오 관점
+이 저장소는 **AI Backend and Web Service** 역량을 학습·실험한 결과물입니다. 구현 범위와 실행 조건은 코드 및 노트북을 기준으로 확인할 수 있습니다.
