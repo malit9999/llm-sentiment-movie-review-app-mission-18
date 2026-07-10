@@ -1,0 +1,11 @@
+streamlit
+requests
+fastapi
+uvicorn
+SQLAlchemy
+pydantic
+transformers
+torch
+numpy
+pandas
+python-multipart
