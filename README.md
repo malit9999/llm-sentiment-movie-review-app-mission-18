@@ -28,7 +28,7 @@
 - SQLite
 
 ## 실행 방법
-`ash
+```bash
 pip install -r requirements.txt
 # Terminal 1
 cd backend
@@ -36,17 +36,17 @@ uvicorn main:app --reload
 # Terminal 2
 cd frontend
 streamlit run app.py
-`
+```
 
 > 데이터셋 또는 사전학습 모델이 외부에서 제공되는 경우, 실행 전에 노트북 또는 코드의 데이터 로드 설정을 확인해야 합니다.
 
 ## 폴더 구조
-`	ext
+```text
 frontend/  # Streamlit 사용자 화면
 backend/   # FastAPI, DB 모델, 감성 분석 로직
 images/    # 서비스 실행 화면
 docs/      # 미션 보고서
-`
+```
 
 ## 학습 내용
 - AI 모델 기능을 API 서비스에 연결하는 방법
